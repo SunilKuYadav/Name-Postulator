@@ -1,0 +1,54 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+		<title>NAME POSTULATOR</title> 
+            <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no"
+    />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+        <link type="text/css" rel="stylesheet" href="style.css">
+        <script type="text/javascript" src="np.js"></script>
+	</head> 
+	<body >
+        <div class="container">
+            <div class="ser">
+                <input id="text1" placeholder="Enter your first name">
+                <!--<label id="lu" style="color: red;visibility: hidden">Invilid</label><br><br>-->
+                <button onclick="fn1()" id="btn1">Search</button>
+            </div>
+            <div id="outout">
+                <div id="inout">
+                    <p class="np">Name Postulator</p>
+                    <div id="out"></div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="cpd"><button id="dbtn">Download</button><br>SUNIL KUMAR YADAV &copy; 2020-21</div>
+        </footer>
+	</body> 
+<script>
+var input = document.getElementById("text1");
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+   event.preventDefault();
+   document.getElementById("btn1").click();
+  }
+});
+    $('#dbtn').click(function(){
+		 $('#outout').addClass('x2');
+            html2canvas($('#outout'), 
+             {
+                onrendered: function (canvas) {
+				var a = document.createElement('a');
+                    a.href = canvas.toDataURL("image/png");       
+                    a.download = 'image.png';
+					a.click();
+                }
+             });
+		});
+</script>
+    
+</html>					 

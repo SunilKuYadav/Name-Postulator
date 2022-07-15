@@ -187,7 +187,7 @@ function fn1() {
     well(str.toUpperCase());
   } else {
     uu.style.border = "solid 3px red";
-    var tr = "Plz enter valid name";
+    var tr = "Please enter only valid first name";
     document.getElementById("out").innerHTML = tr;
   }
   $("html, body").animate(
